@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_4Ji8IE7VEe2mhbvD-je81g" targetNamespace="http://tns.tibco.com/bw/composite/emp_organization_detailsHTTPReceiver" name="emp_organization_detailsHTTPReceiver" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_4XbnIE7VEe2mhbvD-je81g" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_4Xf4kE7VEe2mhbvD-je81g" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_4XiU0E7VEe2mhbvD-je81g" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_4XkKAE7VEe2mhbvD-je81g" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_4Xl_ME7VEe2mhbvD-je81g" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_4XobcE7VEe2mhbvD-je81g" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_4fR7kE7VEe2mhbvD-je81g" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_4m1VEE7VEe2mhbvD-je81g" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_4xBy4E7VEe2mhbvD-je81g" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_4P3mkE7VEe2mhbvD-je81g" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_4P3mkU7VEe2mhbvD-je81g" processName="emp_organization_detailshttpreceiver.emp_organization_detailshttpReceiver"/>
+  </sca:component>
+</sca:composite>

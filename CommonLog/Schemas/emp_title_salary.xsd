@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/emp_title_salary" xmlns:tns="http://www.example.org/emp_title_salary" elementFormDefault="qualified">
+
+    <element name="emptitlereq" type="tns:emptitlereqType"></element>
+    
+    <complexType name="emptitlereqType">
+    	<sequence>
+    		<element name="EMPNAME" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="EMPMIDDLENAME" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="EMPLASTNAME" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="EMPID" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="TITLE" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="SALARY" maxOccurs="1" minOccurs="0"
+    			type="int">
+    		</element>
+    		<element name="FileName" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="emptitlesal">
+    	<sequence>
+    		<element name="EMPNAME" type="string"></element>
+    		<element name="EMPMIDDLENAME" type="string"></element>
+    		<element name="EMPLASTNAME" type="string"></element>
+    		<element name="EMPID" type="int"></element>
+    		<element name="TITLE" type="string"></element>
+    		<element name="SALARY" type="int"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="emptitleres" type="tns:emptitleresType"></element>
+    
+    <complexType name="emptitleresType">
+    	<sequence>
+    		<element name="emptileSal" type="tns:emptitlesal" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

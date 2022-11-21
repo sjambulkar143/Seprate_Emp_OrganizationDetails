@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.EniqueSolutions/EmployeeDetailPOC/MainSystem" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.EniqueSolutions/EmployeeDetailPOC/MainSystem">
+
+     <element name="empinsurancedetailsReq"
+    	type="tns:empinsurancedetailsReqType">
+    </element>
+    
+    <complexType name="empinsurancedetailsReqType">
+    	<sequence>
+            <element name="EMPLOGINID" type="int" maxOccurs="1" minOccurs="1">
+    		</element>
+            <element name="EMPNAME" type="string" maxOccurs="1" minOccurs="0">
+    		</element>
+            <element name="POLICYNAME" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="POLICYNUMBER" type="int" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="POLICYTYPE" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CorrelationID" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="empinsurancedetailsRes"
+    	type="tns:empinsurancedetailsResType">
+    </element>
+    
+    <complexType name="empinsurancedetailsResType">
+    	<sequence>
+    		<element name="empensurancedetres"
+    			type="tns:empensurancedetresType" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="empensurancedetresType">
+    	<sequence>
+    		<element name="EMPNAME" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="EMPID" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="POLICYNAME" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="POLICYNUMBER" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="POLICYTYPE" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="emporganizationdetailsReq"
+    	type="tns:emporganizationdetailsReqType">
+    </element>
+    
+    <complexType name="emporganizationdetails">
+    	<sequence>
+    		<element name="EMPLOGINID" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="COMPANYNAME" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="COMPANYADDRESS" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="COMPANYPHONENUMBER" maxOccurs="1"
+    			minOccurs="0" type="long">
+    		</element>
+    		<element name="COMPANYEMAIL" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ABN" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ACN" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CorrelationID" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="emporganizationdetailsReqType">
+    	<sequence>
+    		<element name="EmployeeOrgDetailReq"
+    			type="tns:emporganizationdetails" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+
+    <element name="emporganizationdetailsRes"
+    	type="tns:emporganizationdetailsResType">
+    </element>
+    
+    <complexType name="emporganizationdetailsResType">
+    	<sequence>
+    		<element name="EmployeeOrgDetailRes"
+    			type="tns:emporganizationdetails" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <element name="emptitlereq" type="tns:emptitlereqType"></element>
+    
+    <complexType name="emptitlereqType">
+    	<sequence>
+            <element name="EMPLOGINID" type="int" maxOccurs="1" minOccurs="1">
+    		</element>
+            <element name="EMPNAME" type="string" maxOccurs="1" minOccurs="0">
+    		</element>
+            <element name="EMPMIDDLENAME" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="EMPLASTNAME" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="TITLE" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="SALARY" maxOccurs="1" minOccurs="0"
+    			type="int">
+    		</element>
+    		<element name="CorrelationID" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="emptitlesal">
+    	<sequence>
+    		<element name="EMPNAME" type="string"></element>
+    		<element name="EMPMIDDLENAME" type="string"></element>
+    		<element name="EMPLASTNAME" type="string"></element>
+    		<element name="EMPID" type="int"></element>
+    		<element name="TITLE" type="string"></element>
+    		<element name="SALARY" type="int"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="emptitleres" type="tns:emptitleresType"></element>
+    
+    <complexType name="emptitleresType">
+    	<sequence>
+    		<element name="emptileSal" type="tns:emptitlesal" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+   <element name="empaddressReq" type="tns:empaddresReqType"></element>
+    
+    <complexType name="empaddresReqType">
+    	<sequence>
+    		<element name="EMPLOGINID" type="int" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="STREET" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CITY" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="STATE" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ZIPCODE" type="int" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CorrelationID" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="empaddressRes" type="tns:empaddressResType"></element>
+    
+    <complexType name="empaddressResType">
+    	<sequence>
+    		<element name="empAddRes" type="tns:EmpadddresssType" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="EmpadddresssType">
+    	<sequence>
+    		<element name="EMPID" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="STREET" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="CITY" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="STATE" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ZIPCODE" maxOccurs="1" minOccurs="0">
+    			<simpleType>
+    				<restriction base="int">
+    					<pattern value="[0-9]{6}"></pattern>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    	</sequence>
+    </complexType>
+
+     <element name="EmpPersonalReq" type="tns:EmpPersonalReqType"></element>
+    
+    <complexType name="EmpPersonalReqType">
+    	<sequence>
+    		<element name="EmpPersonalreQ" type="tns:EmpPersonaL"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+    
+    <element name="EmpPersonalRes" type="tns:EmpPersonalResType"></element>
+    
+    <complexType name="EmpPersonalResType">
+    	<sequence>
+    		<element name="EmpProfessional"
+    			type="tns:EmpProfessionalReqMainType" maxOccurs="1" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+
+    <element name="EmpProfessionalReq"
+    	type="tns:EmpProfessionalReqMainType">
+    </element>
+
+    <complexType name="EmpProfessionalReqType">
+    	<sequence>
+            <element name="EMPLOGINID" type="int" maxOccurs="1" minOccurs="1">
+    		</element>
+            <element name="EMPNAME" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="EMPMIDDLENAME" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="EMPLASTNAME" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DEPARTMENT" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="TITLE" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ADDEDTIME" type="date" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="EMPSTATUS" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="EMPTYPE" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="EMAILID" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="EXPERIENCE" type="int" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ROLE" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CorrelationID" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="EmpProfessionalRes"
+    	type="tns:EmpProfessionalResType">
+    </element>
+    
+    <complexType name="EmpProfessionalResType">
+    	<sequence>
+    		<element name="EmpProfessionalResp"
+    			type="tns:EmpProfessionalReqType" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+   <complexType name="EmpProfessionalReqMainType">
+    	<sequence>
+    		<element name="EmpProfessionReqMain"
+    			type="tns:EmpProfessionalReqType" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+    
+    <element name="RestRequest" type="tns:RestRequestType"></element>
+    
+    <complexType name="RestRequestType">
+    	<sequence>
+    		<element name="empaddressREQ" type="tns:empaddresReqType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="empinsurancedetailsREQ"
+    			type="tns:empinsurancedetailsReqType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="empOrganizationDetailREQ"
+    			type="tns:emporganizationdetailsReqType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="empProfessionalREQ"
+    			type="tns:EmpPersonalResType" maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="empTitleREQ" type="tns:emptitlereqType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="empPersonalREQ" type="tns:EmpPersonalReqType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="AllTablesData" type="tns:AllTableFileInputType" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    
+
+    <element name="RestResponse" type="tns:RestResponseType"></element>
+    
+    <complexType name="RestResponseType">
+    	<sequence>
+    		<element name="ResMessages" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="EmpPersonaL">
+    	<sequence>
+            <element name="EMPPERSONALID" type="int"></element>
+            <element name="EMPNAME" type="string" maxOccurs="1" minOccurs="0">
+    		</element>
+            <element name="EMPMIDDLENAME" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="EMPLASTNAME" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="MOBILENUMBER" type="long" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ALTERNATEMOBILE" type="long"></element>
+    		<element name="DOB" type="date" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="AGE" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="MARRIGESTATUS" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="AADHARNUMBER" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="PANNUMBER" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="CorrelationID" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+    <element name="AllTableFileInput"
+    	type="tns:AllTableFileInputType">
+    </element>
+    
+    <complexType name="AllTableFileInputType">
+    	<sequence>
+    		<element name="CorrelationID" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+</schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/empaddress" xmlns:tns="http://www.example.org/empaddress" elementFormDefault="qualified">
+
+    <element name="empaddressReq" type="tns:empaddresReqType"></element>
+    
+    <complexType name="empaddresReqType">
+    	<sequence>
+    		<element name="EMPID" type="int"></element>
+    		<element name="STREET" type="string"></element>
+    		<element name="CITY" type="string"></element>
+    		<element name="STATE" type="string"></element>
+    		<element name="ZIPCODE" type="int"></element>
+    		<element name="FileName" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="empaddressRes" type="tns:empaddressResType"></element>
+    
+    <complexType name="empaddressResType">
+    	<sequence>
+    		<element name="empAddRes" type="tns:EmpadddresssType" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="EmpadddresssType">
+    	<sequence>
+    		<element name="EMPID" type="int"></element>
+    		<element name="STREET" type="string"></element>
+    		<element name="CITY" type="string"></element>
+    		<element name="STATE" type="string"></element>
+    		<element name="ZIPCODE">
+    			<simpleType>
+    				<restriction base="int">
+    					<pattern value="[0-9]{6}"></pattern>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    	</sequence>
+    </complexType>
+</schema>

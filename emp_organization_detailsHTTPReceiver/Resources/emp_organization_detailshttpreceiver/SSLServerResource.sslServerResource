@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:keystore="http://xsd.tns.tibco.com/bw/sharedresource/trinity/models/cred/keystore" xmlns:sslserver="http://xsd.tns.tibco.com/bw/sharedresource/trinity/models/sslserver" xmi:id="_1G498WZDEe28-r5mBwKjOQ" name="emp_organization_detailshttpreceiver.SSLServerResource" type="sslserver:SSLServerConfiguration">
+  <jndi:reference xmi:id="_2e-LMGZDEe28-r5mBwKjOQ" key="identityStoreServiceProvider" type="keystore:KeystoreConfiguration" value="emp_organization_detailshttpreceiver.KeystoreProviderResource"/>
+  <jndi:configuration xsi:type="sslserver:SSLServerConfiguration" xmi:id="_1G498mZDEe28-r5mBwKjOQ" keyAlias="EmpOrganization" keyPassword="#!VnxnC9/lkoVdbfCji+WQf6BYvjYdadiv4JJh2QF9ny4="/>
+</jndi:namedResource>

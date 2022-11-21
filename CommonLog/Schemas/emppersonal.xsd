@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.EniqueSolutions/EmployeePOC/emppersonal" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.EniqueSolutions/EmployeePOC/emppersonal">
+<element name="EmpPersonalReq" type="tns:EmpPersonalReqType"/>
+      
+    
+  <complexType name="EmpPersonalReqType">
+        	
+    <sequence>
+          		
+      <element maxOccurs="unbounded" minOccurs="0" name="EmpPersonalreQ" type="tns:EmpPersonal"/>
+          	
+    </sequence>
+        
+  </complexType>
+      
+    
+  <element name="EmpPersonalRes" type="tns:EmpPersonalResType"/>
+      
+    
+  <complexType name="EmpPersonalResType">
+        	
+    <sequence>
+          		
+      <element maxOccurs="1" minOccurs="0" name="ResponseMsg" type="string"/>
+          	
+    </sequence>
+        
+  </complexType>
+      
+    
+  <complexType name="EmpPersonal">
+        	
+    <sequence>
+
+    	<element name="EMPNAME" type="string" />
+
+    	<element name="EMPMIDDLENAME" type="string" />
+
+    	<element name="EMPLASTNAME" type="string" />
+
+    	<element name="EMPID" type="int" />
+
+    	<element name="MOBILENUMBER" type="long" maxOccurs="1" minOccurs="0">
+
+
+    	</element>
+
+    	<element name="DOB" type="date" maxOccurs="1" minOccurs="0"></element>
+
+    	<element name="AGE" type="int" />
+
+    	<element name="MARRIGESTATUS" type="string">
+
+
+    	</element>
+
+    	<element name="AADHARNUMBER" type="string">
+
+
+    	</element>
+
+    	<element name="PANNUMBER" type="int" />
+
+    	<element name="FileName" type="string" maxOccurs="1" minOccurs="0"></element>
+    </sequence>
+
+  </complexType>
+      
+      
+  
+</schema>

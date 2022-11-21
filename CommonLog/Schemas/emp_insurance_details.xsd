@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/emp_insurance_details" xmlns:tns="http://www.example.org/emp_insurance_details" elementFormDefault="qualified">
+
+    <element name="empinsurancedetailsReq"
+    	type="tns:empinsurancedetailsReqType">
+    </element>
+    
+    <complexType name="empinsurancedetailsReqType">
+    	<sequence>
+    		<element name="EMPNAME" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="EMPID" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="POLICYNAME" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="POLICYNUMBER" type="int" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="POLICYTYPE" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="FileName" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="empinsurancedetailsRes"
+    	type="tns:empinsurancedetailsResType">
+    </element>
+    
+    <complexType name="empinsurancedetailsResType">
+    	<sequence>
+    		<element name="empensurancedetres"
+    			type="tns:empensurancedetresType" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="empensurancedetresType">
+    	<sequence>
+    		<element name="EMPNAME" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="EMPID" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="POLICYNAME" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="POLICYNUMBER" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="POLICYTYPE" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

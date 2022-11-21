@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.EniqueSolutions.com/Employee_DetailPOC/emp_organization_details" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.EniqueSolutions.com/Employee_DetailPOC/emp_organization_details">
+
+    <element name="emporganizationdetailsReq"
+    	type="tns:emporganizationdetailsReqType">
+    </element>
+    
+    <complexType name="emporganizationdetails">
+    	<sequence>
+    		<element name="EMPLOGINID" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="COMPANYNAME" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="COMPANYADDRESS" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="COMPANYPHONENUMBER" maxOccurs="1"
+    			minOccurs="0" type="string">
+    		</element>
+    		<element name="COMPANYEMAIL" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ABN" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ACN" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="FileName" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="emporganizationdetailsReqType">
+    	<sequence>
+    		<element name="EmployeeOrgDetailReq"
+    			type="tns:emporganizationdetails" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+
+    <element name="emporganizationdetailsRes"
+    	type="tns:emporganizationdetailsResType">
+    </element>
+    
+    <complexType name="emporganizationdetailsResType">
+    	<sequence>
+    		<element name="EmployeeOrgDetailRes"
+    			type="tns:emporganizationdetails" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+</schema>
