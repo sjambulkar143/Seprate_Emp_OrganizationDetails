@@ -15,6 +15,5 @@
   <sca:property xmi:id="_Hv_nQE3_Ee2VgoMvfkXfpQ" name="/DataBaseConnection/DatabaseDriver" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_RVb3gE3_Ee2VgoMvfkXfpQ" name="/DataBaseConnection/DatabaseURL" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_jEjvME4AEe2VgoMvfkXfpQ" name="/HTTPConnection/Username" type="XMLSchema:string" publicAccess="true" scalable="true"/>
-  <sca:property xmi:id="_nmXGcE4AEe2VgoMvfkXfpQ" name="/HTTPConnection/Port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_GtoQUGYyEe28-r5mBwKjOQ" name="/HTTPConnection/PortOrg" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
 </sca:composite>

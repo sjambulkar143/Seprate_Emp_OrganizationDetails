@@ -1519,6 +1519,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/http#//HTTPReceiver"/>
                                     <value customId=""
                                     defaultEncoding="ISO8859_1"
+                                    endpointUri="/addOrg"
                                     httpConnection="httpConnectorResource"
                                     outputHeadersQName="ActivityOutputType:headersType"
                                     outputStyle="String"

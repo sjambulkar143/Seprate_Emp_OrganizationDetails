@@ -173,15 +173,6 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>//CommonLog///HTTPConnection/Port</name>
-			<value>2003</value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>Integer</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
 			<name>//CommonLog//BW.DEPLOYMENTUNIT.VERSION</name>
 			<value></value>
 			<deploymentSettable>false</deploymentSettable>
@@ -228,7 +219,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//CommonLog///HTTPConnection/PortOrg</name>
-			<value>2003</value>
+			<value>443</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>
