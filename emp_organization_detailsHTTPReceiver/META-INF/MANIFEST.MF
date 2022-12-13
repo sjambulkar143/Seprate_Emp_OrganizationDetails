@@ -4,10 +4,7 @@ Bundle-Name: Emp_organization_detailsHTTPReceiver Module
 Bundle-SymbolicName: emp_organization_detailsHTTPReceiver
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: TIBCO Software Inc.
-TIBCO-BW-ApplicationModule: META-INF/module.bwm
-TIBCO-BW-ConfigProfile: META-INF/default.substvar
-TIBCO-BW-Edition: bwe
-TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
 Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
  com.tibco.bw.module; filter:="(&(name=CommonLog)(version=1.0.0))",
  com.tibco.bw.palette; filter:="(name=bw.generalactivities)",
@@ -17,5 +14,8 @@ Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.httpconnector)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.cred)",
  com.tibco.bw.sharedresource.model; filter:="(name=bw.sslserver)"
-TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+TIBCO-BW-Edition: bwe
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-ApplicationModule: META-INF/module.bwm
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
 TIBCO-BW-Version: 6.8.0 V55 2021-11-10

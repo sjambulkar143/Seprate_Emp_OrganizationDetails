@@ -1256,8 +1256,49 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
-                                    x="147"
-                                    xsi:type="notation:Bounds" y="48"/>
+                                    x="280"
+                                    xsi:type="notation:Bounds" y="44"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@activities.1"/>
+                                    <layoutConstraint
+                                    x="114"
+                                    xsi:type="notation:Bounds" y="44"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1385,6 +1426,17 @@
             <element href="//0/@process/@activity/@activity/@links/@children.5"/>
             <bendpoints points="[25, 9, -102, 0]$[103, 0, -24, -9]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.0" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@faultHandlers/@catchAll/@activity/@activity/@links/@children.0"/>
+            <bendpoints points="[25, 1, -127, 0]$[128, 0, -24, -1]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -1459,6 +1511,8 @@
         <bpws:variable name="FaultName" sca-bpel:internal="true" type="xsd:string"/>
         <bpws:variable element="ns:FaultDetail" name="FaultDetails" sca-bpel:internal="true"/>
         <bpws:variable element="ns13:DefaultFault" name="Throw-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns12:LogExceptionHandler"
+            name="ErrorException-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1474,14 +1528,36 @@
                 tibex:faultNameVar="FaultName" tibex:xpdlId="e9e6dc2b-c4c0-494b-9016-01821e3aaed3">
                 <bpws:scope name="scope1">
                     <bpws:flow name="flow1">
-                        <bpws:links/>
+                        <bpws:links>
+                            <bpws:link name="ErrorExceptionToThrow" tibex:linkType="SUCCESS"/>
+                        </bpws:links>
                         <bpws:throw faultName="ns13:DefaultFault"
                             faultVariable="Throw-input" name="Throw" tibex:xpdlId="4b4fe73d-7bdf-4356-9e90-95e4571e7092">
                             <tibex:inputBindings>
                                 <tibex:partBinding
                                     expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;Throw-input&quot; match=&quot;/&quot;>&lt;tns4:DefaultFault>&lt;message>&lt;xsl:value-of select=&quot;&amp;quot;100&amp;quot;&quot;/>&lt;/message>&lt;/tns4:DefaultFault>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                             </tibex:inputBindings>
+                            <bpws:targets>
+                                <bpws:target linkName="ErrorExceptionToThrow"/>
+                            </bpws:targets>
                         </bpws:throw>
+                        <bpws:extensionActivity>
+                            <tibex:extActivity
+                                inputVariable="ErrorException-input"
+                                name="ErrorException"
+                                tibex:xpdlId="5aec6e59-7b65-45f0-a19b-de0391a410d4"
+                                type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                <bpws:sources>
+                                    <bpws:source linkName="ErrorExceptionToThrow"/>
+                                </bpws:sources>
+                                <tibex:inputBindings>
+                                    <tibex:inputBinding coercion=""
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.eniquesolution.com/E-Commerce/CommonFramework&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;HTTPReceiver&quot;/>&lt;xsl:param name=&quot;FaultDetails&quot;/>&lt;xsl:template name=&quot;ErrorException-input&quot; match=&quot;/&quot;>&lt;tns3:LogExceptionHandler>&lt;xsl:if test=&quot;$HTTPReceiver/parameters/CORRELATIONID&quot;>&lt;tns3:CorrelationID>&lt;xsl:value-of select=&quot;$HTTPReceiver/parameters/CORRELATIONID&quot;/>&lt;/tns3:CorrelationID>&lt;/xsl:if>&lt;tns3:ApplictionName>&lt;xsl:value-of select=&quot;$_processContext/ApplicationName&quot;/>&lt;/tns3:ApplictionName>&lt;tns3:ProcessName>&lt;xsl:value-of select=&quot;&amp;quot;Emp_Organization_Details&amp;quot;&quot;/>&lt;/tns3:ProcessName>&lt;tns3:LogType>&lt;xsl:value-of select=&quot;&amp;quot;Exception_Log&amp;quot;&quot;/>&lt;/tns3:LogType>&lt;tns3:MessageType>&lt;xsl:value-of select=&quot;&amp;quot;Exception_Log&amp;quot;&quot;/>&lt;/tns3:MessageType>&lt;tns3:LogMessage>&lt;xsl:value-of select=&quot;&amp;quot;Exception_Log&amp;quot;&quot;/>&lt;/tns3:LogMessage>&lt;tns3:Timestamp>&lt;xsl:value-of select=&quot;current-dateTime()&quot;/>&lt;/tns3:Timestamp>&lt;tns3:Payload>&lt;xsl:value-of select=&quot;$FaultDetails/StackTrace&quot;/>&lt;/tns3:Payload>&lt;tns3:Exception>&lt;tns3:MessageCode>&lt;xsl:value-of select=&quot;$FaultDetails/MsgCode&quot;/>&lt;/tns3:MessageCode>&lt;tns3:ExceptionMessage>&lt;xsl:value-of select=&quot;$FaultDetails/Msg&quot;/>&lt;/tns3:ExceptionMessage>&lt;/tns3:Exception>&lt;/tns3:LogExceptionHandler>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                </tibex:inputBindings>
+                                <tibex:CallProcess moduleRef="CommonLog"
+                                    subProcessName="Logger.ErrorException" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                            </tibex:extActivity>
+                        </bpws:extensionActivity>
                     </bpws:flow>
                 </bpws:scope>
             </bpws:catchAll>
